@@ -6,3 +6,6 @@ docker-compose build
 
 ### Create Django Project
 docker-compose run api sh -c "django-admin startproject app ."
+
+### Create Django App
+docker-compose run api sh -c "python manage.py startapp core"
