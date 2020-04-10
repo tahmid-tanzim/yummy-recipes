@@ -12,3 +12,6 @@ docker-compose run api sh -c "python manage.py startapp core"
 
 ### Django Test
 docker-compose run api sh -c "python manage.py test && flake8"
+
+### Django Migrations
+docker-compose run api sh -c "python manage.py makemigrations core"
