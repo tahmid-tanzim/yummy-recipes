@@ -6,9 +6,12 @@ ENV PYTHONUNBUFFERED 1
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
-RUN mkdir /app
-WORKDIR /app
-COPY ./main /app
+RUN mkdir /recipe_app
+WORKDIR /recipe_app
+COPY ./main /recipe_app
 
 RUN adduser -D superuser
 USER superuser
+
+ENTRYPOINT []
+CMD []
