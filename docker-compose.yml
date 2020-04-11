@@ -10,3 +10,18 @@ services:
       - ./main:/recipe_app
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=recipe
+      - DB_USER=postgres
+      - DB_PASS=my_p@s5_
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12.2-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=recipe
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=my_p@s5_
