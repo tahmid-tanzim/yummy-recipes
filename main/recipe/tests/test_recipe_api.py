@@ -234,14 +234,24 @@
 #     def test_upload_image_bad_request(self):
 #         """Test uploading an invalid image"""
 #         url = image_upload_url(self.recipe.id)
-#         res = self.client.post(url, {'image': 'notimage'}, format='multipart')
+#         res = self.client.post(
+#           url,
+#           {'image': 'notimage'},
+#           format='multipart'
+#         )
 #
 #         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 #
 #     def test_filter_recipes_by_tags(self):
 #         """Test returning recipes with specific tags"""
-#         recipe1 = sample_recipe(user=self.user, title='Thai vegetable curry')
-#         recipe2 = sample_recipe(user=self.user, title='Aubergine with tahini')
+#         recipe1 = sample_recipe(
+#           user=self.user,
+#           title='Thai vegetable curry'
+#         )
+#         recipe2 = sample_recipe(
+#           user=self.user,
+#           title='Aubergine with tahini'
+#         )
 #         tag1 = sample_tag(user=self.user, name='Vegan')
 #         tag2 = sample_tag(user=self.user, name='Vegetarian')
 #         recipe1.tags.add(tag1)
