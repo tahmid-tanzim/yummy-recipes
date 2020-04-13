@@ -4,6 +4,9 @@ A recipe catalog API developed with Django REST Framework, PostgreSQL, Docker
 ### Docker Compose Build
 docker-compose build
 
+### Docker Compose UP
+docker-compose up
+
 ### Create Django Project
 docker-compose run api sh -c "django-admin startproject app ."
 
@@ -13,5 +16,5 @@ docker-compose run api sh -c "python manage.py startapp core"
 ### Django Test
 docker-compose run api sh -c "python manage.py test && flake8"
 
-### Django Migrations
+### Django Core App Migrations
 docker-compose run api sh -c "python manage.py makemigrations core"
