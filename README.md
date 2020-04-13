@@ -24,3 +24,6 @@ docker-compose run api sh -c "python manage.py createsuperuser"
 
 ### Create Django User App
 docker-compose run --rm api sh -c "python manage.py startapp user"
+
+### Create Django User App
+docker-compose run --rm api sh -c "python manage.py startapp recipe"
