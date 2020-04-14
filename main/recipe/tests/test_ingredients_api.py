@@ -2,8 +2,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.test import TestCase
 
-from rest_framework import status
-from rest_framework.test import APIClient
+from rest_framework import status, test
 
 from core.models import Ingredient  # , Recipe
 
@@ -16,7 +15,7 @@ class PublicIngredientsApiTests(TestCase):
     """Test the publicly available ingredients API"""
 
     def setUp(self):
-        self.client = APIClient()
+        self.client = test.APIClient()
 
     def test_login_required(self):
         """Test that login is required to access the endpoint"""
@@ -29,7 +28,7 @@ class PrivateIngredientsApiTests(TestCase):
     """Test the private ingredients API"""
 
     def setUp(self):
-        self.client = APIClient()
+        self.client = test.APIClient()
         self.user = get_user_model().objects.create_user(
             'test@londonappdev.com',
             'testpass'

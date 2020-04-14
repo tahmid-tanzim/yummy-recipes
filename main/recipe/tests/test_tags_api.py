@@ -2,8 +2,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.test import TestCase
 
-from rest_framework import status
-from rest_framework.test import APIClient
+from rest_framework import status, test
 
 from core.models import Tag  # , Recipe
 
@@ -16,7 +15,7 @@ class PublicTagsApiTests(TestCase):
     """Test thje publicly available tags API"""
 
     def setUp(self):
-        self.client = APIClient()
+        self.client = test.APIClient()
 
     def test_login_required(self):
         """Test that login is required for retrieving tags"""
@@ -33,7 +32,7 @@ class PrivateTagsApiTests(TestCase):
             'test@londonappdev.com',
             'password123'
         )
-        self.client = APIClient()
+        self.client = test.APIClient()
         self.client.force_authenticate(self.user)
 
     def test_retrieve_tags(self):
