@@ -4,4 +4,4 @@ Markdown==3.2.1
 django-filter==2.2.0
 flake8==3.7.9
 psycopg2==2.8.5
-Pillow==7.1.1
+Pillow==8.1.1
